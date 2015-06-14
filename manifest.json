@@ -1,0 +1,28 @@
+{
+  "name": "Testing Optimzed CSS",
+  "description": "Testing optimized css",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "unlimitedStorage",
+    "contentSettings"
+  ],
+  "devtools_page": "devtools.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["CSSUtilities.js", "Selector.js", "content_script.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Testing",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
